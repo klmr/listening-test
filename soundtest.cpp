@@ -38,7 +38,7 @@ struct sound_generator {
 unsigned find_inaudible(unsigned start, unsigned stop, unsigned step) {
     sound_generator gen;
     for (unsigned i{start}; i < stop; i += step) {
-        gen.play(i, sf::milliseconds(500));
+        gen.play(i, sf::milliseconds(750));
         while (gen.sound.getStatus() == sf::SoundSource::Status::Playing) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
                 return i;
@@ -51,7 +51,8 @@ unsigned find_inaudible(unsigned start, unsigned stop, unsigned step) {
 
 int main() try {
     std::cout << "Press <Return> once you cannot hear the sound any more." << std::flush;
-    unsigned const start{1000};
+    sf::sleep(sf::milliseconds(500));
+    unsigned const start{5000};
     unsigned const stop{24000};
     unsigned const step{500};
     unsigned const result = find_inaudible(start, stop, step);
