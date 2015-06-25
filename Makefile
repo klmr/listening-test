@@ -1,5 +1,5 @@
 CXXFLAGS += -std=c++1y -pedantic -Wall -Wextra
-LDFLAGS += -lsfml-system -lsfml-audio
+LDFLAGS += -lsfml-system -lsfml-audio -lsfml-window
 
 target := soundtest
 
