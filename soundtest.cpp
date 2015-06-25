@@ -35,11 +35,6 @@ struct sound_generator {
     sf::Sound sound;
 };
 
-void wait() {
-    for (;;)
-        sf::sleep(sf::milliseconds(100));
-}
-
 unsigned find_inaudible(unsigned start, unsigned stop, unsigned step) {
     sound_generator gen;
     for (unsigned i{start}; i < stop; i += step) {
